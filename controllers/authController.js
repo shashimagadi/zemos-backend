@@ -108,7 +108,7 @@ exports.refreshToken = (req, res) => {
     res.cookie("accessToken", newAccessToken, {
       httpOnly: true,
       secure: false,
-      sameSite: "lax",
+      sameSite: "none",
     });
 
     res.json({ message: "Token refreshed" });
