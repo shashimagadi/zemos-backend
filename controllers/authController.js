@@ -56,14 +56,14 @@ exports.login = async (req, res) => {
     // Store refresh token in cookie
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "none",
     });
 
     // Optional: also store access token in cookie
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "none",
     });
 
@@ -107,7 +107,7 @@ exports.refreshToken = (req, res) => {
 
     res.cookie("accessToken", newAccessToken, {
       httpOnly: true,
-      secure: false,
+      secure:true,
       sameSite: "none",
     });
 
